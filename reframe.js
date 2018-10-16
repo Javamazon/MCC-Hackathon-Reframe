@@ -4,6 +4,8 @@ function getStatement() {                                    //assigns user inpu
   document.getElementById("userVal").innerHTML = userInput;
   document.getElementById('statement').value='';
 
+  let userArray = userInput.split(" ");
+  console.log(userArray);
 
 
  let request = new XMLHttpRequest();
