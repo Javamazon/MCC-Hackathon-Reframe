@@ -1,23 +1,52 @@
 
-
-
-function myFunction() {
-  let userStatement = document.getElementById('statement').value;
-  document.getElementById("userVal").innerHTML = userStatement;
+function getStatement() {                                    //assigns user input to a variable
+  let userInput = document.getElementById('statement').value;
+  document.getElementById("userVal").innerHTML = userInput;
   document.getElementById('statement').value='';
 
-console.log(userStatement);
+
+
+ let request = new XMLHttpRequest();
+ let key = '32a16e914953a5f4f7d500110d187e60/';
+ let url = 'http://words.bighugelabs.com/api/2/32a16e914953a5f4f7d500110d187e60/';
+ let format = '/json';
 
 
 
-function newArray() {
-let userArray = userStatement.trim().split(' ');
-console.log(userArray);
-};
+ request.open('GET',url + userInput + format, true);
+ request.onload = function () {
 
-newArray();
-};
+   // Begin accessing JSON data here
+   var data = JSON.parse(this.response);
+
+let newObj = data;
+console.log(newObj);
+let synonyms = newObj.adjective.syn;
+console.log(synonyms);
+let keys = Object.keys(newObj); //getting keys inside newObj
+console.log(keys); //loggin keys
 
 
-var baseURL = 	'https://od-api.oxforddictionaries.com/api/v1';
-var key = '	fa58377c04b48c72fd7171b95ba19d77';
+
+
+console.log(synonyms);
+
+
+
+
+   if (request.status >= 200 && request.status < 400) {
+
+
+
+       console.log(this.response);
+
+
+} //end if
+    else {
+     console.log('error');
+   }//end else
+ }
+
+ request.send();
+
+}; //end function
