@@ -10,7 +10,7 @@ function getStatement() {                                    //assigns user inpu
 
  let request = new XMLHttpRequest();
  let key = '32a16e914953a5f4f7d500110d187e60/';
- let url = 'http://words.bighugelabs.com/api/2/32a16e914953a5f4f7d500110d187e60/';
+ let url = 'https://words.bighugelabs.com/api/2/32a16e914953a5f4f7d500110d187e60/';
  let format = '/json';
 
 
