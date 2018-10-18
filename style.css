@@ -31,16 +31,16 @@ src: url("bromello.otf");
     background-size: cover;
 
 }
-.layer {
-    background-color: rgba(92,92,92, 0.5);
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    margin: 0;
-    padding: 0;
+#background1 {
+    background-image: url(darksky.png);
+    min-height: 100vh;
+    min-width: 100vw;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
 }
+
 
 #drop {
     margin: 1em 1em;
