@@ -1,8 +1,9 @@
-
 <DOCTYPE! html>
-<html>
-<head>
-  <title>Reframe</title>
+
+  <html>
+
+  <head>
+    <title>Reframe</title>
 
     <!-- Bootstrap CSS -->
 
@@ -12,75 +13,103 @@
     <link href="style.css" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
 
-  <script
-  src="https://code.jquery.com/jquery-3.3.1.js"
-  integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
-  crossorigin="anonymous"></script>
-  <script src="reframe.js"></script>
-  <link rel="stylesheet" href ="stylesheet.css">
+
+    <link rel="stylesheet" href="style.css">
 
 
-</head>
-<body>
+  </head>
+
+  <body>
 
     <div class="container-fluid" id="background">
-        <div class="layer">
+      <div class="layer">
         <div class="row top">
-            <div class="col-md-3 text-right"><h2 class="roboto top"><a href="/about.html">About</a></h2></div>
+          <div class="col-md-3 text-right">
+            <h2 class="roboto top"><a href="/about.html">About</a></h2>
+          </div>
 
-            <div class="col-md-6 text-center"><h1 class="bromello"><a href="/index.html">Reframe</a></h1></div>
+          <div class="col-md-6 text-center">
+            <h1 class="bromello"><a href="/index.html">Reframe</a></h1>
+          </div>
 
-            <div class="col-md-3 text-left"><h2 class="roboto top"><a href="/resources.html">Resources</a></h2></div>
+          <div class="col-md-3 text-left">
+            <h2 class="roboto top"><a href="/resources.html">Resources</a></h2>
+          </div>
 
         </div>
         <div class="row top">
-            <div class="col-md-6 offset-md-3 text-center top"><h3>LOGO HERE</h3></div>
+          <div class="col-md-6 offset-md-3 text-center top">
+            <h3>LOGO HERE</h3>
+          </div>
         </div>
 
-<div id = "userInputForm">
-        <div class="row top">
+
+        <div id="displayDivOne">
+          <div class="row top">
             <div class="col-md-6 offset-md-3 text-center top">
-                <h3 class="lora top">input negative thought</h3>
+              <h3 class="lora top">input negative thought</h3>
             </div>
-        </div>
-        <div class="row">
+          </div>
+          <div class="row">
+
             <div class="col-md-6 offset-md-3 text-center">
-                <input class="form-control form-control-lg camelot" id="statement" type="text" placeholder="">
+
+              <input class="form-control form-control-lg camelot" id="statement" type="text" placeholder="">
             </div>
-        </div>
-        <div class="row">
+          </div>
+          <div class="row">
             <div class="col-md-6 offset-md-3 text-center top">
-                <button type="button" class="btn btn-light btn-lg lora" onclick ="getStatement()" id="drop">Submit</button>
+              <button type="button" id ="submitButton" onclick ="modifyStatement()" class="btn btn-light btn-lg lora" id="drop">Submit</button>
             </div>
-        </div>
+          </div>
+
+          <div id="displayDivTwo">
+            <p>Try thinking like this instead...</p>
+            <div id = "modifiedStatementBox">
+            <p id="modifiedStatement"> </p>
+
+
+          </div>
+            <button type="button" class="powerButton" id="powerUpButton" onclick="powerUpButton()">Power Up This Statement? </button>
+            <input id="friendName" type="text" placeholder="Enter the name of a friend">
+            <div id ="step 2">
+            <p> Would you say this to a friend?</p>
+            <p id ="friendStatement"> </p>
+
+            <p> Then why would you say it to yourself?</p>
+
+            <button id="resetButton" onClick = "reset()">Start Again?</button>
 
 </div>
-        <div id = "statementDiv">
-        <p id = "modifiedStatement"> </p>
 
-          <button type="button" class ="powerButton"  id ="powerUpButton" onclick="powerUpButton()" visibility="none">Power Up This Statement? </button>
-          <input id = "friendName" type="text" placeholder="Name of a friend">
-          <button type="button" id = "powerUpButtonSubmit">Submit</button>
         </div>
+      </div>
 
-        <div class="row top">
-            <div class="col-md-6 offset-md-3 text-center top">
-                <h2 class="white">share</h2>
-            </div>
+</div>
+
+      <div class="row top">
+        <div class="col-md-6 offset-md-3 text-center top">
+          <h2 class="white">share</h2>
         </div>
-        <div class="row white">
-            <div class="col-md-6 offset-md-3 text-center">
-                <i class="fab fa-twitter fa-3x white"></i><i class="fab fa-facebook-square fa-3x"></i>
-            </div>
+      </div>
+      <div class="row white">
+        <div class="col-md-6 offset-md-3 text-center">
+          <i class="fab fa-twitter fa-3x white"></i><i class="fab fa-facebook-square fa-3x"></i>
         </div>
+      </div>
+    </div>
+
+
+    <a class="twitter-share-button" href="https://twitter.com/intent/tweet">
+      Tweet</a>
 
 
 
+    </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+    <script src="reframe.js"></script>
+  </body>
 
 
-
-        </div></div>
-</body>
-
-
-</html>
+  </html>
