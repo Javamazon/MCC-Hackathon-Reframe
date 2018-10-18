@@ -53,11 +53,7 @@ h2 a:link, a:visited, a:hover, a:active {
 h1 a:link, a:visited, a:hover, a:active {
     color: #493a59; 
 }
-i {
-    color: #fff;
-    margin: 0 20px;
-    opacity:0.6;
-}
+
 .white {
     color: #fff;
 }
