@@ -29,6 +29,13 @@
   js.src = 'https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.1';
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
+  
+ <script>
+ function pictureChange()
+  {
+   document.getElementById("theImage").src="Ladder.png";
+  }
+</script>
     
     <div class="container-fluid" id="background1">
         <div class="container-fluid layer">
@@ -41,7 +48,7 @@
                 
         </div>
         <div class="row top">
-            <div class="col-md-6 offset-md-3 text-center top"><h3>LOGO HERE</h3></div>    
+            <div class="col-md-6 offset-md-3 text-center top"><img id="theImage" src="Fence_R2.png" alt="fence" /></div>     
         </div>
 
         <div class="row top">
@@ -56,7 +63,7 @@
         </div>
         <div class="row">
             <div class="col-md-6 offset-md-3 text-center top">
-                <button type="button" class="btn btn-light btn-lg lora" onclick ="getStatement()" id="drop">Submit</button>
+                <button type="button" class="btn btn-light btn-lg lora" onclick ="getStatement(); pictureChange()" id="drop theButton">Submit</button>
             </div>
         </div>
          
