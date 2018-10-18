@@ -46,6 +46,13 @@ src: url("bromello.otf");
     margin: 1em 1em;
     box-shadow: 2px 2px;
 }
+h2 {
+    color: #493a59;
+    font-weight: 600;
+}
+h3 a:link, a:visited, a:hover, a:active {
+    color: #783e4c; 
+}
 
 h2 a:link, a:visited, a:hover, a:active {
     color: #783e4c; 
@@ -53,11 +60,7 @@ h2 a:link, a:visited, a:hover, a:active {
 h1 a:link, a:visited, a:hover, a:active {
     color: #493a59; 
 }
-i {
-    color: #fff;
-    margin: 0 20px;
-    opacity:0.6;
-}
+
 .white {
     color: #fff;
 }
@@ -65,4 +68,10 @@ i {
     background-color: #783e4c !important;
     color: #fff !important;
     opacity: 0.3 !important;
+}
+.lots {
+    margin: 1em 0;
+}
+.little {
+    margin: 0.5 0;
 }
