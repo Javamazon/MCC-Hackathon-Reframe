@@ -21,7 +21,7 @@
 
 </head>
 <body>
-<div id="fb-root"></div>
+  <div id="fb-root"></div>
 <script>(function(d, s, id) {
   var js, fjs = d.getElementsByTagName(s)[0];
   if (d.getElementById(id)) return;
@@ -29,18 +29,13 @@
   js.src = 'https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.1';
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
-    
-<script>
+  
+ <script>
  function pictureChange()
   {
    document.getElementById("theImage").src="Ladder.png";
   }
 </script>
-
-
-
-
-
     
     <div class="container-fluid" id="background1">
         <div class="container-fluid layer">
@@ -53,9 +48,9 @@
                 
         </div>
         <div class="row top">
-            <div class="col-md-6 offset-md-3 text-center top"><img id="theImage" src="Fence_R2.png" alt="fence" /></div>    
+            <div class="col-md-6 offset-md-3 text-center top"><img id="theImage" src="Fence_R2.png" alt="fence" /></div>     
         </div>
-
+<div id="divDisplayOne">
         <div class="row top">
             <div class="col-md-6 offset-md-3 text-center top">
                 <h3 class="lora top">input negative thought</h3>
@@ -68,10 +63,50 @@
         </div>
         <div class="row">
             <div class="col-md-6 offset-md-3 text-center top">
-                <button type="button" class="btn btn-light btn-lg lora" onclick ="getStatement(); pictureChange()" id="drop theButton">Submit</button>
+                <button type="button" class="btn btn-light btn-lg lora" onclick ="modifyStatement(); pictureChange()" id="drop theButton">Submit</button>
             </div>
         </div>
+          </div>
          
+          
+<div id="displayDivTwo">
+    <div class="row top">
+        <div class="col-md-6 offset-md-3 text-center top">
+                <h3 class="lora">Try thinking like this instead...</h3>
+            <div id = "modifiedStatementBox">
+            <p id="modifiedStatement"> </p>
+
+
+            </div></div></div>
+    <div class="row">
+        <div class="col-md-4 offset-md-3 text-center">
+            <button type="button" class="powerButton btn btn-light btn-lg lora" id="powerUpButton" onclick="powerUpButton()">Power Up This Statement? </button></div> 
+        <div class="col-md-4">
+    <input class="form-control form-control-lg" id="friendName" type="text" placeholder="Enter the name of a friend"></div>
+           
+    </div>
+    
+   
+            <div id ="step 2">
+     <div class="row top">
+        <div class="col-md-6 offset-md-3 text-center">
+            <h3 class="lora">Would you say this to a friend?</h3>
+                </div></div>
+    <div class="row top">
+        <div class="col-md-6 offset-md-3 text-center">
+            <p id ="friendStatement"> </p>
+        </div></div>
+    
+    <div class="row top">
+        <div class="col-md-6 offset-md-3 text-center">    
+            <h3 class="lora"> Then why would you say it to yourself?</h3></div></div>
+        
+    <div class="row top">
+        <div class="col-md-6 offset-md-3 text-center">
+            <button class="btn btn-light btn-lg lora" id="resetButton" onClick = "reset()">Start Again?</button></div></div>
+
+            </div>
+    </div>
         <div class="row top">
    
         </div>    
@@ -81,16 +116,14 @@
             <div class="col-xs-12 col-md-2 text-center"><a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-size="large" data-show-count="false">Tweet</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></div>
             
                 
-            </div>    
-        </div>
+        </div> 
+    </div>
                 
         
 
  
 
-  <p id="userVal">     </p>
-
-  <p id="lexicon">    </p>
+  
         </div>
 </body>
 
