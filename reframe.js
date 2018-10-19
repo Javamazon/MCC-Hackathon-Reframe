@@ -2,7 +2,6 @@
 
 
 
-
 let posQuotesArray = [ "More smiling, less worrying. More compassion, less judgment. More blessed, less stressed. More love, less hate. - Roy T. Bennett, The Light in the Heart",
 "Keep Going. Your hardest times often lead to the greatest moments of your life. Keep going. Tough situations build strong people in the end. - Roy T. Bennett, The Light in the Heart",
 "Great things happen to those who don't stop believing, trying, learning, and being grateful. ― Roy T. Bennett, The Light in the Heart",
@@ -30,7 +29,9 @@ let negContractionArray = [
 
 let positiveAnt = [
   ["bad", "getting better"],
-  ["suck", " am getting better"]
+  ["suck", "am getting better"],
+  ["good", "am getting better"]
+
 ];
 
 
@@ -136,11 +137,12 @@ if(wordToChange === changeToThis) {
 posArray = modifyThis.splice(modifyThis[j], 1, negContractionArray[k][1]);
 console.log(posArray[0]);
 console.log(posArray);
-} else {
+} else { //end if
   console.log("haven't found it yet");
-}
-        }
-}
+}//end else
+} //end k loop
+}// end j loop
+
 
 
   for (let p = 0; p < modifyThis.length; p++){
@@ -167,9 +169,23 @@ console.log(posArray);
   switch (true)
   {
     case (adjacentElem[0] === "I'm" && adjacentElem[1] === "not"):
-    friendNot = ["is"]
+    friendNot = ["is"];
     console.log(friendNot);
     break;
+
+  case (adjacentElem[0] === "I" && adjacentElem[1] === "am"):
+  friendNot = ["is"];
+  console.log(friendNot[0]);
+  break;
+
+  case(adjacentElem[0] === "I" && adjacentElem[1] === "can't"):
+  friendNot = ["you"];
+  console.log(friendNot[0]);
+  break;
+
+
+
+  default: friendNot = [];
 
   }
 
@@ -201,18 +217,35 @@ powerUpButton();
 
 
 function powerUpButton() {
+
   document.getElementById("friendStatement").innerHTML = "";
 friendSplit[0] = document.getElementById('friendName').value;
+console.log(friendNot[0]);
+
+switch(true){
+   case (friendNot[0] === "is"):
+
+displayFriendArray = friendSplit.concat(friendNot[0]);
+
+displayFriendArray = displayFriendArray.concat(buttonModifyThis);
+break;
+
+case (friendNot[0] === "you"):
+displayFriendArray = friendSplit.concat(friendNot[0]);
+displayFriendArray = displayFriendArray.concat(buttonModifyThis);
+break;
+
+case (friendNot[0] === []):
+displayFriendArray = friendSplit.concat(buttonModifyThis);
+}//end switch
 
 
-displayFriendArray = friendSplit.concat(buttonModifyThis)
 
-console.log(displayFriendArray);
-
-console.log(displayFriendArray);
 joinedDisplayFriendArray = displayFriendArray.join(" ");
 
 document.getElementById("friendStatement").innerHTML = joinedDisplayFriendArray;
+
+
 }
 
 function reset(){
