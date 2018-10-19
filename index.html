@@ -1,15 +1,23 @@
 <DOCTYPE! html>
-<html>
-<head>
-  <title>Reframe</title>
-    
+
+  <html>
+
+  <head>
+    <title>Reframe</title>
+
     <!-- Bootstrap CSS -->
-  
+
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-      
+
     <!-- Style CSS -->
     <link href="style.css" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+
+
+
+    
+
+ 
     
   <script
   src="https://code.jquery.com/jquery-3.3.1.js"
@@ -49,23 +57,73 @@
         </div>
         <div class="row top">
             <div class="col-md-6 offset-md-3 text-center top"><img id="theImage" src="Fence_R2.png" alt="fence" /></div>     
+
         </div>
 
-        <div class="row top">
+
+        <div id="displayDivOne">
+          <div class="row top">
             <div class="col-md-6 offset-md-3 text-center top">
-                <h3 class="lora top">input negative thought</h3>
+              <h3 class="lora top">input negative thought</h3>
             </div>
-        </div>
-        <div class="row">
+          </div>
+          <div class="row">
+
             <div class="col-md-6 offset-md-3 text-center">
-                <input class="form-control form-control-lg camelot" id="statement" type="text" placeholder="">
+
+              <input class="form-control form-control-lg camelot" id="statement" type="text" placeholder="">
             </div>
-        </div>
-        <div class="row">
+          </div>
+          <div class="row">
             <div class="col-md-6 offset-md-3 text-center top">
-                <button type="button" class="btn btn-light btn-lg lora" onclick ="getStatement(); pictureChange()" id="drop theButton">Submit</button>
+
+                <button type="button" class="btn btn-light btn-lg lora" onclick ="modifyStatement(); pictureChange()" id="drop theButton">Submit</button>
             </div>
+          </div>
+
+          <div id="displayDivTwo">
+            <p>Try thinking like this instead...</p>
+            <div id = "modifiedStatementBox">
+            <p id="modifiedStatement"> </p>
+
+
+          </div>
+            <button type="button" class="powerButton" id="powerUpButton" onclick="powerUpButton()">Power Up This Statement? </button>
+            <input id="friendName" type="text" placeholder="Enter the name of a friend">
+            <div id ="step 2">
+            <p> Would you say this to a friend?</p>
+            <p id ="friendStatement"> </p>
+
+            <p> Then why would you say it to yourself?</p>
+
+            <button id="resetButton" onClick = "reset()">Start Again?</button>
+
+</div>
+
         </div>
+
+      </div>
+
+</div>
+
+      <div class="row top">
+        <div class="col-md-6 offset-md-3 text-center top">
+          <h2 class="white">share</h2>
+        </div>
+      </div>
+      <div class="row white">
+        <div class="col-md-6 offset-md-3 text-center">
+
+            <a class="twitter-share"
+    href="https://twitter.com/intent/tweet?text=I%20world"
+    data-size="large"><i class="fab fa-twitter fa-3x white">
+  </a></i>
+
+
+
+  <i class="fab fa-facebook-square fa-3x"></i>
+
+
          
         <div class="row top">
    
@@ -78,16 +136,18 @@
                 
             </div> 
         </div>
-                
-        
-
- 
-
-  <p id="userVal">     </p>
-
-  <p id="lexicon">    </p>
-        </div>
-</body>
+      </div>
+    </div>
 
 
-</html>
+
+
+
+    </div>
+    </div>
+    
+    <script src="reframe.js"></script>
+  </body
+
+
+  </html>
