@@ -16,6 +16,7 @@ src: url("bromello.otf");
     font-family: "Bromello";
     font-size: 8em;
     color: #493A59;
+    font-weight: 800;
 }
 .top {
     padding-top: 2em;
@@ -24,19 +25,22 @@ src: url("bromello.otf");
 #background {
     background-image: url(sky.jpg);
     min-height: 100vh;
+    min-width: 100vw;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    opacity: 0.6;
+
 }
-.layer {
-    background-color: rgba(92,92,92, 0.3);
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+#background1 {
+    background-image: url(darksky.png);
+    min-height: 100vh;
+    min-width: 100vw;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
 }
+
 
 #drop {
     margin: 1em 1em;
@@ -49,13 +53,11 @@ h2 a:link, a:visited, a:hover, a:active {
 h1 a:link, a:visited, a:hover, a:active {
     color: #493a59; 
 }
-i {
-    color: #fff;
-    margin: 0 20px;
-}
+
 .white {
     color: #fff;
 }
+
 
 #displayDivTwo {
   width: 70%;
@@ -66,3 +68,10 @@ i {
   background-color: white;
   font-size: 1.5em;
 }
+
+.camelot {
+    background-color: #783e4c !important;
+    color: #fff !important;
+    opacity: 0.3 !important;
+}
+

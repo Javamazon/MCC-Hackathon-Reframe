@@ -14,33 +14,50 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
 
 
-    <link rel="stylesheet" href="style.css">
+
+    
+
+ 
+    
+  <script
+  src="https://code.jquery.com/jquery-3.3.1.js"
+  integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+  crossorigin="anonymous"></script>
+  <script src="reframe.js"></script>
+  <link rel="stylesheet" href ="stylesheet.css">
 
 
-  </head>
-
-  <body>
-
-    <div class="container-fluid" id="background">
-      <div class="layer">
+</head>
+<body>
+  <div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = 'https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.1';
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+  
+ <script>
+ function pictureChange()
+  {
+   document.getElementById("theImage").src="Ladder.png";
+  }
+</script>
+    
+    <div class="container-fluid" id="background1">
+        <div class="container-fluid layer">
         <div class="row top">
-          <div class="col-md-3 text-right">
-            <h2 class="roboto top"><a href="/about.html">About</a></h2>
-          </div>
-
-          <div class="col-md-6 text-center">
-            <h1 class="bromello"><a href="/index.html">Reframe</a></h1>
-          </div>
-
-          <div class="col-md-3 text-left">
-            <h2 class="roboto top"><a href="/resources.html">Resources</a></h2>
-          </div>
-
+            <div class="col-md-3 text-center"><h2 class="roboto top"><a href="https://javamazon.github.io/MCC-Hackathon-Reframe/about.html">About</a></h2></div>
+  
+            <div class="col-md-6 text-center"><h1 class="bromello"><a href="https://javamazon.github.io/MCC-Hackathon-Reframe/">Reframe</a></h1></div>
+            
+            <div class="col-md-3 text-center"><h2 class="roboto top"><a href="https://javamazon.github.io/MCC-Hackathon-Reframe/resources.html">Resources</a></h2></div>
+                
         </div>
         <div class="row top">
-          <div class="col-md-6 offset-md-3 text-center top">
-            <h3>LOGO HERE</h3>
-          </div>
+            <div class="col-md-6 offset-md-3 text-center top"><img id="theImage" src="Fence_R2.png" alt="fence" /></div>     
+
         </div>
 
 
@@ -59,7 +76,8 @@
           </div>
           <div class="row">
             <div class="col-md-6 offset-md-3 text-center top">
-              <button type="button" id ="submitButton" onclick ="modifyStatement()" class="btn btn-light btn-lg lora" id="drop">Submit</button>
+
+                <button type="button" class="btn btn-light btn-lg lora" onclick ="modifyStatement(); pictureChange()" id="drop theButton">Submit</button>
             </div>
           </div>
 
@@ -83,6 +101,7 @@
 </div>
 
         </div>
+
       </div>
 
 </div>
@@ -104,6 +123,18 @@
 
   <i class="fab fa-facebook-square fa-3x"></i>
 
+
+         
+        <div class="row top">
+   
+        </div>    
+        <div class="row">
+            <div class="col-xs-12 col-md-2 offset-md-4 text-center">
+                <div class="fb-share-button" data-href="https://javamazon.github.io/MCC-Hackathon-Reframe/" data-layout="button" data-size="large" data-mobile-iframe="true"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fjavamazon.github.io%2FMCC-Hackathon-Reframe%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Share</a></div></div>
+            <div class="col-xs-12 col-md-2 text-center"><a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-size="large" data-show-count="false">Tweet</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></div>
+            
+                
+            </div> 
         </div>
       </div>
     </div>
@@ -114,9 +145,9 @@
 
     </div>
     </div>
-    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+    
     <script src="reframe.js"></script>
-  </body>
+  </body
 
 
   </html>

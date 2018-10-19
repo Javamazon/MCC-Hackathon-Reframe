@@ -1,9 +1,4 @@
-window.onload = function(){
-  document.getElementById("powerUpButton").style.visibility = "hidden";
-  document.getElementById("friendName").style.visibility = "hidden";
-  document.getElementById("statementDiv").style.visibility = "hidden";
-  document.getElementById("powerUpButtonSubmit").style.visibility = "hidden";
-};
+
 
 
 
@@ -16,8 +11,18 @@ let negContractionArray = [
     ["won't", "will"],
     ["will not", "will"],
     ["can not", "can"],
-    ["I'm not", "I am"]
+    ["I'm", "I'm not"],
+    ["I'm not", "I am"],
+
+
+
 ];
+
+let positiveAnt = [
+  ["bad", "getting better"],
+  ["suck", " am getting better"]
+];
+
 
 let negWordArray = [
   ["worst", "always getting better"],
@@ -32,6 +37,10 @@ let userPronoun = [];
 
 let upUserPronoun = "";
 
+let userInput = "";
+
+let userArray =[];
+
 let modifyThis = [];
 
 let posArray = [];
@@ -42,47 +51,55 @@ let yetAnotherArray = [];
 
 let finalArray = [];
 
-let friend = "";
+let friend = [];
+
+let friendArray = [];
+
+let statementObj = {};
+
+let buttonModifyThis = [];
+
+let displayFriendArray = [];
+
+let friendSplit = [];
+
+let friendNot = [];
+
+
+function modifyStatement() { //assigns user input to a variable
 
 
 
 
-function powerUpButton() {
-  document.getElementById("friendName").style.visibility = "visible";
-  document.getElementById()
-let friend = document.getElementById('friendName').value;
-document.getElementById("friendName").style.visibilty = "hidden";
 
-  console.log(friend);
-}
-
-function getStatement() { //assigns user input to a variable
-    let userInput = document.getElementById('statement').value;
+userInput = document.getElementById('statement').value;
 
     document.getElementById('statement').value = '';
 
     console.log(userInput);
-    let userArray = userInput.split(" ");
+    userArray = userInput.split(" ");
     console.log(userArray);
 
     for (let i = 0; i < userArray.length; i++) { //begin for
 
 
-        if (userArray[i] === "I" || userArray[i] === "I'm") { //begin if
+        if (userArray[i] === "I" || userArray[i] === "I'm" || userArray[i] === "I'm not") { //begin if
             userPronoun.push(userArray[i]);
             console.log(userPronoun);
         } else { //end if
             modifyThis.push(userArray[i]);
             console.log(modifyThis);
-
-        } // end else
+            } // end else
     } // end i for loop
-
+buttonModifyThis = [...modifyThis];
+console.log(buttonModifyThis);
 for ( let n = 0; n < modifyThis.length; n++){
-
   if(modifyThis[n] === "not"){
     let removed = modifyThis.splice(modifyThis[n], 1);
     console.log(modifyThis);
+    friendNot = modifyThis[n];
+    console.log(friendNot);
+
   } else{
 
   }
@@ -99,12 +116,14 @@ let changeToThis = negContractionArray[k][0];
 if(wordToChange === changeToThis) {
   console.log(changeToThis)
 posArray = modifyThis.splice(modifyThis[j], 1, negContractionArray[k][1]);
+console.log(posArray[0]);
 console.log(posArray);
 } else {
   console.log("haven't found it yet");
 }
         }
 }
+
 
   for (let p = 0; p < modifyThis.length; p++){
 
@@ -127,25 +146,11 @@ console.log(posArray);
     } //end if
   } // end q loop
 
+
   finalArray = userPronoun.concat(modifyThis);
   console.log(finalArray);
   displayStatement = finalArray.join(" ");
   console.log(displayStatement);
-
-  let elem = document.querySelector("#userInputForm");
-  elem.parentNode.removeChild(elem);
-
-
-
-
-
-
-function showButton (){
-  document.getElementById("powerUpButton").style.visibility = "visible";
-};
-
-
-
 
 
 
@@ -153,17 +158,76 @@ function showButton (){
         console.log(finalArray);
         displayStatement = finalArray.join(" ");
         console.log(displayStatement);
-        document.getElementById("statementDiv").style.visibility = "visible";
+
         document.getElementById("modifiedStatement").innerHTML = displayStatement;
 
-showButton();
-
-document.getElementById("friendName").style.visibility = "visible";
 
 
 
 
 
+powerUpButton();
 
-return displayStatement;
+
+
 }
+
+document.getElementById("friendStatement").innerHTML = "";
+
+function powerUpButton() {
+  document.getElementById("friendStatement").innerHTML = "";
+friendSplit[0] = document.getElementById('friendName').value;
+
+
+displayFriendArray = friendSplit.concat(buttonModifyThis);
+
+if(displayFriendArray[1] === "am"){
+  displayFriendArray[1] = "you are";
+  console.log(displayFriendArray[1]);
+} else{
+  displayFriendArray[1] = "am";
+}
+
+console.log(displayFriendArray);
+joinedDisplayFriendArray = displayFriendArray.join(" ");
+
+document.getElementById("friendStatement").innerHTML = joinedDisplayFriendArray;
+}
+
+function reset(){
+  userInput = "";
+  userArray = "";
+  modifyThis = "";
+  document.getElementById("modifiedStatement").innerHTML = "";
+  document.getElementById("friendStatement").innerHTML = "";
+  document.getElementById("friendName").value = "";
+
+
+
+}
+
+var getWindowOptions = function() {
+  var width = 500;
+  var height = 350;
+  var left = (window.innerWidth / 2) - (width / 2);
+  var top = (window.innerHeight / 2) - (height / 2);
+
+  return [
+    'resizable,scrollbars,status',
+    'height=' + height,
+    'width=' + width,
+    'left=' + left,
+    'top=' + top,
+  ].join();
+};
+
+var twitterBtn = document.querySelector('.twitter-share');
+var text = encodeURIComponent("I'm thinking positively! Come check out this website that re-frames your negative thoughts!");
+var shareUrl = 'https://twitter.com/intent/tweet?url=' + location.href + '&text=' + text;
+twitterBtn.href = shareUrl; // 1
+
+twitterBtn.addEventListener('click', function(e) {
+  e.preventDefault();
+  var win = window.open(shareUrl, 'ShareOnTwitter', getWindowOptions());
+  win.opener = null; // 2
+});
