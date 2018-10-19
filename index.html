@@ -38,6 +38,11 @@
    document.getElementById("theImage").src="Ladder_R1.png";
   }
 </script>
+<script>
+    function backgroundimg() {
+        document.body.style.backgroundImage ="url('sky.jpg)";
+    }
+</script>
     
     <div class="container-fluid" id="background1">
         <div class="container-fluid layer">
@@ -65,7 +70,7 @@
         </div>
         <div class="row">
             <div class="col-md-6 offset-md-3 text-center top">
-                <button type="button" class="btn btn-light btn-lg lora" onclick ="modifyStatement(); pictureChange()" id="drop theButton">Submit</button>
+                <button type="button" class="btn btn-light btn-lg lora" onclick ="modifyStatement(); pictureChange(); backgroundimg()" id="drop theButton">Submit</button>
             </div>
         </div>
           </div>
