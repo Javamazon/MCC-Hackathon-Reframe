@@ -40,7 +40,7 @@
 </script>
 <script>
     function change_bg() {
-        document.body.style.backgroundImage = "url(sky.jpg)";
+        document.getElementById('sky').style.backgroundImage = "url(sky.jpg)";
     }
 </script>
     
@@ -70,7 +70,7 @@
         </div>
         <div class="row">
             <div class="col-md-6 offset-md-3 text-center top">
-                <button type="button" class="btn btn-light btn-lg lora" onclick ="modifyStatement(); pictureChange(); javascript:change_bg();" id="drop theButton">Submit</button>
+                <button type="button" class="btn btn-light btn-lg lora" onclick ="modifyStatement(); pictureChange(); change_bg();" id="drop theButton sky">Submit</button>
             </div>
         </div>
           </div>
