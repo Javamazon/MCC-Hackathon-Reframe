@@ -36,16 +36,32 @@
  function pictureChange()
   {
    document.getElementById("theImage").src="Ladder_R1.png";
+    document.getElementById('background1').id = 'background';
   }
 </script>
-
+<!--
 <script>
     $(function() {
     $('#background1').click(function() {
         $(this).attr('id', 'background');
     });
 });
-    </script>
+    </script> 
+    
+<script type="text/javascript">
+    clicked=true;
+    $(document).ready(function(){
+                      $("sky").click(function() {
+                                        if (clicked){
+        $(this).css('id', 'background1');
+        clicked = false;
+    } else {
+        $(this).css('id', 'background');
+        clicked=true;
+    }
+                                        });
+                      });
+    </script>  -->
     
     <div class="container-fluid" id="background1">
         <div class="container-fluid layer">
@@ -73,7 +89,7 @@
         </div>
         <div class="row">
             <div class="col-md-6 offset-md-3 text-center top">
-                <button type="button" class="btn btn-light btn-lg lora" onclick ="modifyStatement(); pictureChange(); " id="drop theButton">Submit</button>
+                <button type="button" class="btn btn-light btn-lg lora" onclick ="modifyStatement(); pictureChange(); " id="drop theButton sky">Submit</button>
             </div>
         </div>
           </div>
