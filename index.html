@@ -50,7 +50,7 @@
         <div class="row top">
             <div class="col-md-6 offset-md-3 text-center top"><img id="theImage" src="Fence_R2.png" alt="fence" /></div>     
         </div>
-
+<div id="divDisplayOne">
         <div class="row top">
             <div class="col-md-6 offset-md-3 text-center top">
                 <h3 class="lora top">input negative thought</h3>
@@ -63,10 +63,31 @@
         </div>
         <div class="row">
             <div class="col-md-6 offset-md-3 text-center top">
-                <button type="button" class="btn btn-light btn-lg lora" onclick ="getStatement(); pictureChange()" id="drop theButton">Submit</button>
+                <button type="button" class="btn btn-light btn-lg lora" onclick ="modifyStatement(); pictureChange()" id="drop theButton">Submit</button>
             </div>
         </div>
+          </div>
          
+          
+          <div id="displayDivTwo">
+            <p>Try thinking like this instead...</p>
+            <div id = "modifiedStatementBox">
+            <p id="modifiedStatement"> </p>
+
+
+          </div>
+            <button type="button" class="powerButton" id="powerUpButton" onclick="powerUpButton()">Power Up This Statement? </button>
+            <input id="friendName" type="text" placeholder="Enter the name of a friend">
+            <div id ="step 2">
+            <p> Would you say this to a friend?</p>
+            <p id ="friendStatement"> </p>
+
+            <p> Then why would you say it to yourself?</p>
+
+            <button id="resetButton" onClick = "reset()">Start Again?</button>
+
+</div>
+
         <div class="row top">
    
         </div>    
@@ -83,9 +104,7 @@
 
  
 
-  <p id="userVal">     </p>
-
-  <p id="lexicon">    </p>
+  
         </div>
 </body>
 
