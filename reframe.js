@@ -3,6 +3,16 @@
 
 
 
+let posQuotesArray = [ "More smiling, less worrying. More compassion, less judgment. More blessed, less stressed. More love, less hate. - Roy T. Bennett, The Light in the Heart",
+"Keep Going. Your hardest times often lead to the greatest moments of your life. Keep going. Tough situations build strong people in the end. - Roy T. Bennett, The Light in the Heart",
+"Great things happen to those who don't stop believing, trying, learning, and being grateful. ― Roy T. Bennett, The Light in the Heart",
+ "The more you feed your mind with positive thoughts, the more you can attract great things into your life. ― Roy T. Bennett, The Light in the Heart","Be Brave and Take Risks: You need to have faith in yourself. Be brave and take risks. You don't have to have it all figured out to move forward. ― Roy T. Bennett, The Light in the Heart",
+
+
+
+
+];
+
 let negContractionArray = [
     ["don't", "do"],
     ["can't", "can"],
@@ -26,7 +36,7 @@ let positiveAnt = [
 
 let negWordArray = [
   ["worst", "always getting better"],
-  ["failure", "will keep trying"],
+  ["failing", "will keep trying"],
   ["suck", "will get better"]
 ];
 
@@ -65,6 +75,8 @@ let friendSplit = [];
 
 let friendNot = [];
 
+let adjacentElem = [];
+
 
 function modifyStatement() { //assigns user input to a variable
 
@@ -79,6 +91,12 @@ userInput = document.getElementById('statement').value;
     console.log(userInput);
     userArray = userInput.split(" ");
     console.log(userArray);
+ adjacentElem = userArray.slice(0, 2);
+ console.log(adjacentElem);
+
+
+
+
 
     for (let i = 0; i < userArray.length; i++) { //begin for
 
@@ -134,7 +152,7 @@ console.log(posArray);
         changeNegWordArray = modifyThis.splice(modifyThis[p], 1, negWordArray[q][1]);
         console.log(removeMe);
         changeNegWordArray = changeNegWordArray.splice(modifyThis[p], 1);
-
+        changeNegWordArray.splice(removeMe, 1);
 
 
         console.log(changeNegWordArray);
@@ -145,6 +163,15 @@ console.log(posArray);
       } // end else
     } //end if
   } // end q loop
+
+  switch (true)
+  {
+    case (adjacentElem[0] === "I'm" && adjacentElem[1] === "not"):
+    friendNot = ["is"]
+    console.log(friendNot);
+    break;
+
+  }
 
 
   finalArray = userPronoun.concat(modifyThis);
@@ -165,28 +192,22 @@ console.log(posArray);
 
 
 
-
 powerUpButton();
 
 
 
 }
 
-document.getElementById("friendStatement").innerHTML = "";
+
 
 function powerUpButton() {
   document.getElementById("friendStatement").innerHTML = "";
 friendSplit[0] = document.getElementById('friendName').value;
 
 
-displayFriendArray = friendSplit.concat(buttonModifyThis);
+displayFriendArray = friendSplit.concat(buttonModifyThis)
 
-if(displayFriendArray[1] === "am"){
-  displayFriendArray[1] = "you are";
-  console.log(displayFriendArray[1]);
-} else{
-  displayFriendArray[1] = "am";
-}
+console.log(displayFriendArray);
 
 console.log(displayFriendArray);
 joinedDisplayFriendArray = displayFriendArray.join(" ");
@@ -195,9 +216,38 @@ document.getElementById("friendStatement").innerHTML = joinedDisplayFriendArray;
 }
 
 function reset(){
-  userInput = "";
-  userArray = "";
-  modifyThis = "";
+   userPronoun = [];
+
+   upUserPronoun = "";
+
+   userInput = "";
+
+   userArray =[];
+
+   modifyThis = [];
+
+   posArray = [];
+
+   changeNegWordArray = [];
+
+  yetAnotherArray = [];
+
+  finalArray = [];
+
+  friend = [];
+
+  friendArray = [];
+
+  statementObj = {};
+
+  buttonModifyThis = [];
+
+  displayFriendArray = [];
+
+  friendSplit = [];
+
+  friendNot = [];
+
   document.getElementById("modifiedStatement").innerHTML = "";
   document.getElementById("friendStatement").innerHTML = "";
   document.getElementById("friendName").value = "";
