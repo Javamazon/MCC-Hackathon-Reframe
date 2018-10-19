@@ -29,8 +29,8 @@ let negContractionArray = [
 
 let positiveAnt = [
   ["bad", "getting better"],
-  ["suck", "am getting better"],
-  ["good", "am getting better"]
+  ["suck", "am getting better little by little"],
+  ["good", "am getting better. I need to keep at it"]
 
 ];
 
@@ -77,6 +77,10 @@ let friendSplit = [];
 let friendNot = [];
 
 let adjacentElem = [];
+
+let posWordArray =[];
+
+let addPosWordArray = [];
 
 
 function modifyStatement() { //assigns user input to a variable
@@ -166,7 +170,22 @@ console.log(posArray);
     } //end if
   } // end q loop
 
-  switch (true)
+
+for (let p = 0; p < modifyThis.length; p++){
+  for(let q = 0; q < positiveAnt.length; q++){
+    if(modifyThis[p] === positiveAnt[q][0]){
+      console.log(positiveAnt[q][0]);
+      let removeNegWord = modifyThis[p];
+      addPosWordArray = modifyThis.splice(modifyThis[p],1, positiveAnt[q][1]);
+      addPosWordArray = addPosWordArray.splice(modifyThis[p],1);
+      console.log(addPosWordArray);
+      console.log(modifyThis);
+       addPosWordArray.splice(removeNegWord,1);
+      console.log(addPosWordArray);
+      }//end if
+  } //end q
+}//end p
+switch (true)
   {
     case (adjacentElem[0] === "I'm" && adjacentElem[1] === "not"):
     friendNot = ["is"];
@@ -183,11 +202,19 @@ console.log(posArray);
   console.log(friendNot[0]);
   break;
 
+  case(adjacentElem[0] === "I'm"):
+  friendNot = ["is"];
+  break;
+
+  case(adjacentElem[0] === "I"):
+  friendNot = [];
+  break;
+
 
 
   default: friendNot = [];
 
-  }
+}//end switch
 
 
   finalArray = userPronoun.concat(modifyThis);
@@ -197,13 +224,9 @@ console.log(posArray);
 
 
 
-        finalArray = userPronoun.concat(modifyThis);
-        console.log(finalArray);
-        displayStatement = finalArray.join(" ");
-        console.log(displayStatement);
 
-        document.getElementById("modifiedStatement").innerHTML = displayStatement;
-
+document.getElementById("modifiedStatement").innerHTML = displayStatement;
+console.log(addPosWordArray);
 
 
 
@@ -217,6 +240,7 @@ powerUpButton();
 
 
 function powerUpButton() {
+
 
   document.getElementById("friendStatement").innerHTML = "";
 friendSplit[0] = document.getElementById('friendName').value;
@@ -237,12 +261,22 @@ break;
 
 case (friendNot[0] === []):
 displayFriendArray = friendSplit.concat(buttonModifyThis);
+break
+
+case(userArray[1] === "suck"):
+buttonModifyThis[0] = "sucks";
+console.log(buttonModifyThis);
+displayFriendArray = friendSplit.concat(friendNot[0]);
+displayFriendArray = displayFriendArray.concat(buttonModifyThis);
+break
+
+
+
+default:
+displayFriendArray = friendSplit.concat(buttonModifyThis);
 }//end switch
 
-
-
 joinedDisplayFriendArray = displayFriendArray.join(" ");
-
 document.getElementById("friendStatement").innerHTML = joinedDisplayFriendArray;
 
 
