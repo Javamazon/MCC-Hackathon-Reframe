@@ -21,7 +21,10 @@ src: url("bromello.otf");
 .top {
     padding-top: 2em;
 }
-
+p {
+    color: #493A59;
+    font-size: 1.7em;
+}
 #background {
     background-image: url(sky.jpg);
     min-height: 100vh;
@@ -46,6 +49,13 @@ src: url("bromello.otf");
     margin: 1em 1em;
     box-shadow: 2px 2px;
 }
+h2 {
+    color: #493a59;
+    font-weight: 600;
+}
+h3 a:link, a:visited, a:hover, a:active {
+    color: #783e4c; 
+}
 
 h2 a:link, a:visited, a:hover, a:active {
     color: #783e4c; 
@@ -61,4 +71,10 @@ h1 a:link, a:visited, a:hover, a:active {
     background-color: #783e4c !important;
     color: #fff !important;
     opacity: 0.3 !important;
+}
+.lots {
+    margin: 1em 0;
+}
+.little {
+    margin: 0.5 0;
 }
