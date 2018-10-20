@@ -1,7 +1,6 @@
 
 
 
-
 let posQuotesArray = [ "More smiling, less worrying. More compassion, less judgment. More blessed, less stressed. More love, less hate. - Roy T. Bennett, The Light in the Heart",
 "Keep Going. Your hardest times often lead to the greatest moments of your life. Keep going. Tough situations build strong people in the end. - Roy T. Bennett, The Light in the Heart",
 "Great things happen to those who don't stop believing, trying, learning, and being grateful. ― Roy T. Bennett, The Light in the Heart",
@@ -14,12 +13,12 @@ let posQuotesArray = [ "More smiling, less worrying. More compassion, less judgm
 
 let negContractionArray = [
     ["don't", "do"],
-    ["can't", "can"],
-    ["didn't", "do"],
+
+    ["can't", "can and will"],
     ["shouldn't", "should"],
     ["won't", "will"],
     ["will not", "will"],
-    ["can not", "can"],
+    ["can not", "can and will"],
     ["I'm", "I'm not"],
     ["I'm not", "I am"],
 
@@ -30,15 +29,18 @@ let negContractionArray = [
 let positiveAnt = [
   ["bad", "getting better"],
   ["suck", "am getting better little by little"],
-  ["good", "am getting better. I need to keep at it"]
-
+  ["good", "am getting better. I need to keep at it"],
+  ["stupid", "always learning more"]
 ];
 
 
-let negWordArray = [
+let negWordArray = [+
+
+
   ["worst", "always getting better"],
   ["failing", "will keep trying"],
-  ["suck", "will get better"]
+  ["suck", "will get better"],
+  ["worth it", "worth more than you realize"]
 ];
 
 
@@ -181,6 +183,7 @@ for (let p = 0; p < modifyThis.length; p++){
       console.log(addPosWordArray);
       console.log(modifyThis);
        addPosWordArray.splice(removeNegWord,1);
+
       console.log(addPosWordArray);
       }//end if
   } //end q
@@ -268,7 +271,8 @@ buttonModifyThis[0] = "sucks";
 console.log(buttonModifyThis);
 displayFriendArray = friendSplit.concat(friendNot[0]);
 displayFriendArray = displayFriendArray.concat(buttonModifyThis);
-break
+break;
+
 
 
 
