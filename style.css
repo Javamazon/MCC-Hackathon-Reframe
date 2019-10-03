@@ -82,3 +82,9 @@ h1 a:link, a:visited, a:hover, a:active {
 .padding {
     padding-bottom: 3em;
 }
+
+#modifiedStatement {
+    color: white;
+    font-size: 2em;
+
+}
