@@ -5,13 +5,7 @@
 let keyword = 'stupid';
 let userArr = [];
 
-
-
-
-
-
-
-
+let app = document.getElementById('root');
 
 function getUserStatement() {
   
@@ -25,8 +19,27 @@ dictionaryCall(userArr)
 }
 
 
+function displayModifiedStatement(userArr) {
+  console.log('entering display statement function')
+
+  let x = document.getElementById('modifiedStatement');
+  console.log(x)
+
+  x.innerText = userArr;
 
 
+  
+  
+
+
+
+
+
+
+
+
+
+}
 function dictionaryCall(userArr) {
   console.log(userArr)
   
@@ -55,7 +68,12 @@ function dictionaryCall(userArr) {
       console.log(x)
       let newArr = userArr.splice(x, 1, newWord)
       console.log(userArr)
-      console.log(newArr)
+      userArr = userArr.join(' ');
+     
+
+   
+
+      displayModifiedStatement(userArr);
 }
 
 
